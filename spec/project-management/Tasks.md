@@ -2,15 +2,18 @@
 
 Implementation task backlog for the MVP. Status values: `todo`, `doing`, `blocked`, `done`.
 
-## Phase 0: Foundation
+## Phase 0: Pitch Landing Foundation
 
 | ID | Task | Epic | Priority | Status | Dependencies |
 |---|---|---|---|---|---|
-| T-001 | Scaffold Next.js App Router project with TypeScript. | EP-01 | P0 | todo | None |
-| T-002 | Add Tailwind CSS, component primitives, and base layout. | EP-01 | P0 | todo | T-001 |
-| T-003 | Add environment variable validation. | EP-01 | P0 | todo | T-001 |
-| T-004 | Add test tooling and baseline scripts. | EP-01 | P0 | todo | T-001 |
-| T-005 | Add protected admin route shell. | EP-01 | P0 | todo | T-002 |
+| T-001 | Scaffold minimal Next.js App Router project with TypeScript for Vercel build readiness. | EP-01 | P0 | done | None |
+| T-002 | Add Tailwind CSS and global styling foundation for the pitch landing. | EP-01 | P0 | done | T-001 |
+| T-003 | Build Thai-first project overview landing page. | EP-01 | P0 | done | T-002 |
+| T-004 | Add static product mockups for chat, admin portal, checklist, and feedback loop. | EP-01 | P0 | done | T-003 |
+| T-005 | Add typecheck/build scripts for initial deployment verification. | EP-01 | P0 | done | T-001 |
+| T-006 | Configure environment variable validation. | EP-01 | P1 | todo | T-001 |
+| T-007 | Add test tooling and baseline scripts. | EP-01 | P1 | todo | T-001 |
+| T-008 | Add protected admin route shell. | EP-01 | P1 | todo | T-002 |
 
 ## Phase 1: Data Model
 
@@ -71,4 +74,3 @@ Implementation task backlog for the MVP. Status values: `todo`, `doing`, `blocke
 | T-605 | Build RAG golden dataset and evaluation script. | EP-07 | P1 | todo | T-205 |
 | T-606 | Configure Vercel environments. | EP-07 | P0 | todo | T-001, T-101 |
 | T-607 | Run staging deployment and release gates. | EP-07 | P0 | todo | T-601, T-602, T-603, T-604 |
-

@@ -1,18 +1,27 @@
 # Implementation Plan
 
-## Phase 0: Scaffold And Baseline
+## Phase 0: Pitch Landing And Deployable Baseline
 
-1. Initialize Next.js App Router project with TypeScript.
-2. Add Tailwind CSS, shadcn/ui, lucide-react, validation, testing tools.
-3. Configure environment variable validation.
-4. Add root layout, base UI shell, and protected admin route structure.
-5. Add CI scripts for typecheck, lint, unit tests, and Playwright smoke tests.
+This phase is intentionally narrower than the full foundation epic. Its purpose is to create a Vercel-ready Next.js baseline and a Thai-first pitch landing page with static product mockups for stakeholder sessions.
+
+1. Initialize minimal Next.js App Router project with TypeScript.
+2. Add Tailwind CSS and global responsive styling.
+3. Build a static landing page that explains problem, MVP solution, target architecture, expected outcomes, and roadmap.
+4. Add static mockups for chat workspace, admin document portal, checklist generator, and feedback/quality loop.
+5. Add typecheck and build scripts for initial deployment verification.
 
 Exit criteria:
 
 - App runs locally.
-- Vercel build succeeds.
-- Static checks pass.
+- Production build succeeds.
+- Landing page is suitable for pitch sessions.
+- Static checks pass for the scaffolded app.
+
+Deferred from the original foundation scope:
+
+- Environment variable validation.
+- Admin route shell and protection.
+- Test tooling beyond typecheck/build.
 
 ## Phase 1: Data Model
 
@@ -100,4 +109,3 @@ Exit criteria:
 6. Checklist.
 7. Feedback dashboard.
 8. Test and deploy.
-

@@ -17,18 +17,19 @@ Exit criteria:
 - `spec/Techstack.md` approved.
 - Epics, stories, tasks, and milestones are available.
 
-## M1: App Foundation Ready
+## M1: Pitch Landing Ready
 
 Target outcome:
 
-- Next.js app shell is scaffolded and deployable.
+- Next.js app shell is scaffolded and deployable with a Thai-first pitch landing page.
 
 Exit criteria:
 
 - App runs locally.
-- Vercel preview build passes.
-- Base layout and admin route shell exist.
-- Static checks pass.
+- Production build passes.
+- Landing page explains project overview, problem, MVP solution, target architecture, expected outcomes, and roadmap.
+- Static product mockups are visible for chat, admin document portal, checklist generator, and feedback loop.
+- Static checks pass for the scaffolded app.
 
 Related epics:
 
@@ -137,4 +138,3 @@ Exit criteria:
 Related epics:
 
 - EP-07
-
