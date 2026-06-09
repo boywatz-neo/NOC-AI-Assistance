@@ -32,6 +32,17 @@ Read these files before making architectural or implementation decisions:
 - `spec/support/Environment.md`: environment variables.
 - `spec/support/Security.md`: security baseline.
 - `spec/support/Operations-Runbook.md`: deployment and operational notes.
+- `DEPLOYMENT.md`: Vercel deployment environments, release gates, and rollback.
+- `spec/project-management/README.md`: project-management artifact index.
+- `spec/project-management/Epic.md`: high-level feature groups.
+- `spec/project-management/User-Stories.md`: user-centered story backlog.
+- `spec/project-management/Tasks.md`: task backlog with priorities and dependencies.
+- `spec/project-management/Milestones.md`: delivery gates.
+- `spec/project-management/Acceptance-Criteria.md`: MVP release acceptance criteria.
+- `spec/project-management/RAID-Log.md`: risks, assumptions, issues, and dependencies.
+- `spec/project-management/RACI.md`: responsibility matrix.
+- `spec/project-management/Release-Plan.md`: release stages and release-note template.
+- `spec/project-management/Change-Control.md`: scope/spec change process.
 
 When code and specs conflict, pause and update the relevant spec or call out the conflict before implementing a broad change.
 
@@ -44,6 +55,7 @@ PRD.md
 README.md
 README.me
 AGENTS.md
+DEPLOYMENT.md
 spec/
   Architecture.md
   Database.md
@@ -56,6 +68,17 @@ spec/
     Environment.md
     Operations-Runbook.md
     Security.md
+  project-management/
+    Acceptance-Criteria.md
+    Change-Control.md
+    Epic.md
+    Milestones.md
+    RACI.md
+    RAID-Log.md
+    README.md
+    Release-Plan.md
+    Tasks.md
+    User-Stories.md
 ```
 
 The implementation source tree may not exist yet. When creating it, follow the planned Next.js App Router structure:
@@ -75,6 +98,8 @@ tests/
 ## Development Rules
 
 - Keep the project spec-driven: update specs when changing architecture, API contracts, database shape, or deployment assumptions.
+- Keep project-management docs current when changing MVP scope, epics, stories, tasks, milestones, owners, risks, acceptance criteria, or release plans.
+- Use `spec/project-management/Change-Control.md` when a change affects scope, architecture, timeline, database schema, API contracts, deployment model, or security posture.
 - Prefer small, focused commits.
 - Do not commit real vendor PDFs, secrets, production data, or generated embeddings from confidential documents.
 - Keep credentials in environment variables only.
@@ -146,10 +171,18 @@ When implementation exists, run the relevant checks before finalizing a change:
 
 If tests cannot be run because the app is not scaffolded or dependencies are missing, state that clearly in the final response.
 
+## Project Management Expectations
+
+- Map significant implementation work to an epic, story, task, or milestone when possible.
+- Update `spec/project-management/Tasks.md` when task status, priority, or dependencies change.
+- Update `spec/project-management/Milestones.md` when delivery gates change.
+- Update `spec/project-management/RAID-Log.md` when new risks, assumptions, issues, or dependencies are discovered.
+- Update `spec/project-management/Acceptance-Criteria.md` before changing release gates.
+- Use `DEPLOYMENT.md` and `spec/project-management/Release-Plan.md` for deployment and release workflow changes.
+
 ## Git Notes
 
 - The fork remote is expected to be `https://github.com/boywatz-neo/NOC-AI-Assistance.git`.
 - Prefer working on feature branches.
 - Do not revert user changes unless explicitly requested.
 - Before committing, inspect `git status --short` and stage only the intended files.
-
