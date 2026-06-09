@@ -1,34 +1,49 @@
-# NOC AI Assistant Prototype
+# NOC AI Assistant
 
-Spec-driven prototype for the PRD in [spec/PRD.md](/Users/chopin/projects/e-learning/AI%20Workshop/project-script/spec/PRD.md). The current build is a Vercel-friendly Next.js frontend with mock API routes that model the Phase 1 product experience while keeping backend integration points explicit.
+Spec-driven MVP for a RAG-based chatbot web application used by NOC operators to search vendor PDF manuals, receive cited answers, and generate configuration checklists.
 
-## What is included
+## Current Direction
 
-- PRD-traceable prototype for chat, checklist generation, active release visibility, admin document inventory, and feedback review
-- Contract-first mock API endpoints under `app/api/*`
-- Supporting implementation specs in `spec/`
-- Vercel-compatible Next.js app structure with no custom server requirement
+This repository is being reshaped from the original split frontend/backend proposal into a Vercel-ready Next.js monolith:
 
-## Local development
+- Next.js App Router for UI and server routes.
+- Next.js Route Handlers under `/app/api/*` as the backend API.
+- Azure OpenAI for chat and embeddings.
+- Managed PostgreSQL with pgvector-compatible vector search for MVP simplicity.
+- Vercel deployment target with environment-based configuration.
 
-```bash
-npm install
-npm run dev
-```
+The original product requirements remain in [PRD.md](/Users/Thanawat/Workspace/workshop/Workshop#3-Team/NOC-AI-Assistance/PRD.md). The MVP implementation specs live under [spec](/Users/Thanawat/Workspace/workshop/Workshop#3-Team/NOC-AI-Assistance/spec).
 
-Open `http://localhost:3000`.
+## Spec Index
 
-## Vercel deployment
+- [Architecture](/Users/Thanawat/Workspace/workshop/Workshop#3-Team/NOC-AI-Assistance/spec/Architecture.md)
+- [Tech Stack](/Users/Thanawat/Workspace/workshop/Workshop#3-Team/NOC-AI-Assistance/spec/Techstack.md)
+- [Database](/Users/Thanawat/Workspace/workshop/Workshop#3-Team/NOC-AI-Assistance/spec/Database.md)
+- [Testing Plan](/Users/Thanawat/Workspace/workshop/Workshop#3-Team/NOC-AI-Assistance/spec/Testing-Plan.md)
+- [Implementation Plan](/Users/Thanawat/Workspace/workshop/Workshop#3-Team/NOC-AI-Assistance/spec/Implementing-Plan.md)
+- [MVP PRD](/Users/Thanawat/Workspace/workshop/Workshop#3-Team/NOC-AI-Assistance/spec/PRD.md)
+- [API Contract](/Users/Thanawat/Workspace/workshop/Workshop#3-Team/NOC-AI-Assistance/spec/support/API-Contract.md)
+- [Environment Variables](/Users/Thanawat/Workspace/workshop/Workshop#3-Team/NOC-AI-Assistance/spec/support/Environment.md)
+- [Security Notes](/Users/Thanawat/Workspace/workshop/Workshop#3-Team/NOC-AI-Assistance/spec/support/Security.md)
+- [Operations Runbook](/Users/Thanawat/Workspace/workshop/Workshop#3-Team/NOC-AI-Assistance/spec/support/Operations-Runbook.md)
 
-1. Import this repository into Vercel.
-2. Use the default Next.js framework preset.
-3. Add environment variables from `.env.example` as you connect real Azure and database services.
-4. Deploy. No `vercel.json` is required for the current prototype.
+## MVP Scope
 
-## Suggested next implementation step
+Included:
 
-Replace the mock handlers with:
+- Chat UI with Thai/English questions.
+- RAG answer generation with citations, confidence, and active document version.
+- PDF upload and indexing portal for admins.
+- Document version metadata and archive flow.
+- Basic checklist generation.
+- Feedback collection on AI answers.
 
-- FastAPI service for document ingestion, RAG orchestration, admin workflows, and audit logging
-- Vercel frontend calls to that backend via environment-configured base URLs
-- Azure OpenAI, Azure AI Search, Blob Storage, and PostgreSQL integrations per the implementation spec
+Deferred:
+
+- Separate FastAPI backend.
+- Docker/Nginx intranet deployment.
+- ITSM integration.
+- SSO/Active Directory integration.
+- Real-time monitoring system integration.
+- Advanced analytics dashboard.
+
